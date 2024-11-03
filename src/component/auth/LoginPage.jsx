@@ -20,7 +20,7 @@ const handleSubmit = async (e) => {
             localStorage.setItem('role', userData.role);
             navigate('/profile');
         } else {
-            setError(userData ? userData.message : 'Login failed. Please try again.');
+            setError(userData ? userData.message : 'Vui lòng nhập đủ thông tin. Please try again.');
         }
     } catch (error) {
         console.error('Error during login:', error);
@@ -40,11 +40,11 @@ const handleSubmit = async (e) => {
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label>Email: </label>
-                    <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                    <input type="email" value={email} onChange={(e) => setEmail(e.target.value)}  placeholder="Enter your email" />
                 </div>
                 <div className="form-group">
                     <label>Password: </label>
-                    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Enter your password" />
                 </div>
                 <button type="submit">Login</button>
             </form>

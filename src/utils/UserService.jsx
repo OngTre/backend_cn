@@ -155,10 +155,23 @@ export const api = axios.create({
     }
 
     /**AUTHENTICATION CHECKER */
-    export const  logout = () =>{
-        localStorage.removeItem('token')
-        localStorage.removeItem('role')
-    }
+    export const logout = () => {
+      // Kiểm tra nếu không có thông tin đăng nhập trong localStorage
+      if (!localStorage.getItem('token') || !localStorage.getItem('role')) {
+          alert("Không có thông tin đăng nhập để đăng xuất!");
+          return; // Kết thúc hàm nếu không có thông tin đăng nhập
+      }
+  
+      // Hỏi người dùng có chắc chắn muốn đăng xuất không
+      const confirmLogout = window.confirm("Bạn có chắc chắn muốn đăng xuất?");
+      if (confirmLogout) {
+          localStorage.removeItem('token');
+          localStorage.removeItem('role');
+          alert("Đăng xuất thành công!");
+          // Điều hướng về trang đăng nhập hoặc trang chính
+          window.location.href = '/login'; // thay đổi đường dẫn nếu cần
+      }
+  };
 
     export const isAuthenticated = () =>{
         const token = localStorage.getItem('token')

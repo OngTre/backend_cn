@@ -35,8 +35,8 @@ function RegistrationPage() {
                 role: '',
             });
     
-            alert('User registered successfully');
-            navigate('/admin/user-management'); // Chuyển hướng sau khi đăng ký
+            alert('Đăng ký người dùng thành công');
+            navigate('/login'); // Chuyển hướng sau khi đăng ký
         } catch (error) {
             console.error('Error registering user:', error);
             alert('Lỗi đăng ký');
@@ -49,16 +49,16 @@ function RegistrationPage() {
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label>Name:</label>
-                    <input type="text" name="name" value={formData.name} onChange={handleInputChange} required />
+                    <input type="text" name="name" value={formData.name} onChange={handleInputChange} placeholder="Enter your Name" required />
                 </div>
 
                 <div className="form-group">
                     <label>Email:</label>
-                    <input type="email" name="email" value={formData.email} onChange={handleInputChange} required />
+                    <input type="email" name="email" value={formData.email} onChange={handleInputChange} placeholder="Enter your Email" required />
                 </div>
                 <div className="form-group">
                     <label>Password:</label>
-                    <input type="password" name="password" value={formData.password} onChange={handleInputChange} required />
+                    <input type="password" name="password" value={formData.password} onChange={handleInputChange} placeholder="Enter your password" required />
                 </div>
 
                 <div className="form-group">
