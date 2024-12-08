@@ -3,7 +3,7 @@ import React from "react";
 const Home = () => {
   return (
     <main>
-        <h2 className='mt-5'>Chào mừng mọi người đến với Trả Lời Trắc Nghiệm Trực</h2>
+        <h2 className='mt-5'> Website học Tiếng Anh Trực Tuyến </h2>
         <hr/>
         {/* <div className="card" style= {{ width: "18rem" }}>
   <image className="card-img-top" src=".../100px180/" alt="Card image cap"/>

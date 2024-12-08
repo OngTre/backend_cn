@@ -9,7 +9,7 @@ import Navbar from './component/layout/NavBar';
 import AddQuestion from "./component/question/AddQuestion";
 import UpdateQuestion from './component/question/UpdateQuestion';
 
-import  { isAdmin }from "./utils/UserService";
+// import  { isAdmin }from "./utils/UserService";
 // quiz
 import Admin from './component/Admin';
 import Home from './component/Home';
@@ -25,7 +25,12 @@ import LoginPage from './component/auth/LoginPage';
 import Profile from './component/user/Profile';
 import UpdateUser from './component/user/UpdateUser';
 import Teacher from './component/user/Teacher';
+// YouTube Search
+import YouTubeSearch from './component/youtubevideo/YouTubeSearch'; // Nhập YouTubeSearch
+import AddVideo from './component/youtubevideo/AddVideo';
+import VideoList from './component/youtubevideo/VideoList';
 import './App.css'
+import VideoDetailPage from './component/youtubevideo/VideoDetailPage';
 
 
 const App = () => {
@@ -48,12 +53,22 @@ const App = () => {
            <Route path='/update-quiz/:id' element={<UpdateQuestion/>} />
            <Route path='/all-quizzes' element={<GetAllQuiz/>} />
            <Route path='/quiz-result' element={<QuizResult/>} />
+           <Route path='/admin' element={<Admin/>} />
             {/* {isAdmin() && ( */}
               <>
                 <Route path="/register" element={<RegistrationPage />} /> 
                 <Route path="/admin/user-management" element={<Teacher/>} />
                 <Route path="/update-user/:userId" element={<UpdateUser />} />
               </>
+               
+            {/* YouTube Routes */}
+            <Route path="/youtube-search" element={<YouTubeSearch />} />
+            <Route path="/addVideo" element={<AddVideo />} />
+            <Route path="/videos" element={<VideoList />} />
+            <Route path="/videos/:id" element={<VideoDetailPage />} />
+                
+
+           
             {/* )} */}
             {/* <Route path="*" element={<Navigate to="/login" />} /> */}
           </Routes>
